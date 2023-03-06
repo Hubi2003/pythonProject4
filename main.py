@@ -1,4 +1,18 @@
 import re
+def password_strenght(password):
+    score = 0
+    if len(password) >= 8:
+        score += 5
+    if re.search(r'[A-Z]', password):
+        score += 3
+    if re.search(r'[a-z]', password):
+        score += 1
+    if re.search(r'\d', password):
+        score += 2
+    if re.search(r'[\W_]', password):
+        score += 1
+    return score
+
 
 
 def is_common_password(password):
@@ -27,6 +41,8 @@ while True:
         print('Dodaj wielka litere')
     elif not any(c for c in password if not c.isalnum()):
         print('Dodaj jeszcze znak specjalny i bedzie dobrze.')
+    elif password_strenght(password) <= 10:
+        print(f'Hasło {password} jest za słabe,spróbuj ponownie')
 
 
 
