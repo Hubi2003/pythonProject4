@@ -26,7 +26,7 @@ while True:
     elif not any(c.isupper() for c in password):
         print('Dodaj wielka litere')
     elif not any(c for c in password if not c.isalnum()):
-        print('Dodaj jeszcze znak specjalny i bedzie idealnie.')
+        print('Dodaj jeszcze znak specjalny i bedzie dobrze.')
 
 
 
