@@ -10,7 +10,9 @@ def password_strenght(password):
     if re.search(r'\d', password):
         score += 2
     if re.search(r'[\W_]', password):
-        score += 1
+        score += 3
+
+
     return score
 
 
